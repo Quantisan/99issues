@@ -6,3 +6,15 @@
 
 ![I got 99 issues](/img/jayz-tagline.jpg)
 
+## Development Mode
+
+### Run application:
+
+```
+lein figwheel
+```
+
+Figwheel will automatically push cljs changes to the browser.
+
+Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+
