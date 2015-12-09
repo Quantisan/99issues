@@ -1,0 +1,56 @@
+{
+      "url": "https://api.github.com/repos/apa512/clj-rethinkdb/issues/117",
+      "labels_url": "https://api.github.com/repos/apa512/clj-rethinkdb/issues/117/labels{/name}",
+      "comments_url": "https://api.github.com/repos/apa512/clj-rethinkdb/issues/117/comments",
+      "events_url": "https://api.github.com/repos/apa512/clj-rethinkdb/issues/117/events",
+      "html_url": "https://github.com/apa512/clj-rethinkdb/issues/117",
+      "id": 117961015,
+      "number": 117,
+      "title": "Add missing tests",
+      "user": {
+        "login": "danielcompton",
+        "id": 811954,
+        "avatar_url": "https://avatars.githubusercontent.com/u/811954?v=3",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/danielcompton",
+        "html_url": "https://github.com/danielcompton",
+        "followers_url": "https://api.github.com/users/danielcompton/followers",
+        "following_url": "https://api.github.com/users/danielcompton/following{/other_user}",
+        "gists_url": "https://api.github.com/users/danielcompton/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/danielcompton/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/danielcompton/subscriptions",
+        "organizations_url": "https://api.github.com/users/danielcompton/orgs",
+        "repos_url": "https://api.github.com/users/danielcompton/repos",
+        "events_url": "https://api.github.com/users/danielcompton/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/danielcompton/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "labels": [
+        {
+          "url": "https://api.github.com/repos/apa512/clj-rethinkdb/labels/easy",
+          "name": "easy",
+          "color": "fbca04"
+        },
+        {
+          "url": "https://api.github.com/repos/apa512/clj-rethinkdb/labels/help%20wanted",
+          "name": "help wanted",
+          "color": "159818"
+        },
+        {
+          "url": "https://api.github.com/repos/apa512/clj-rethinkdb/labels/hygiene",
+          "name": "hygiene",
+          "color": "5319e7"
+        }
+      ],
+      "state": "open",
+      "locked": false,
+      "assignee": null,
+      "milestone": null,
+      "comments": 0,
+      "created_at": "2015-11-20T03:59:46Z",
+      "updated_at": "2015-11-22T04:30:16Z",
+      "closed_at": null,
+      "body": "There are a bunch of query terms that don't have tests. If you're looking to help contribute to the driver, adding tests for some of these would be a great help.\r\n\r\n- [ ] index-status\r\n- [ ] index-wait\r\n- [ ] inner-join\r\n- [ ] outer-join\r\n- [ ] eq-join\r\n- [ ] zip\r\n- [ ] with-fields\r\n- [ ] concat-map\r\n- [ ] skip\r\n- [ ] limit\r\n- [ ] slice\r\n- [ ] nth\r\n- [ ] indexes-of\r\n- [ ] is-empty\r\n- [ ] union\r\n- [ ] sample\r\n- [ ] group\r\n- [ ] ungroup\r\n- [ ] reduce\r\n- [ ] count\r\n- [ ] contains\r\n- [ ] pluck\r\n- [ ] append\r\n- [ ] prepend\r\n- [ ] difference\r\n- [ ] set-insert\r\n- [ ] set-union\r\n- [ ] set-intersection\r\n- [ ] set-difference\r\n- [ ] has-fields\r\n- [ ] insert-at\r\n- [ ] splice-at\r\n- [ ] delete-at\r\n- [ ] change-at\r\n- [x] keys\r\n- [x] values\r\n- [ ] literal\r\n- [x] object\r\n- [ ] sub\r\n- [ ] mul\r\n- [ ] div\r\n- [ ] mod\r\n- [ ] not\r\n- [ ] now\r\n- [ ] for-each\r\n- [ ] http\r\n- [ ] desc\r\n- [ ] to-geojson\r\n- [ ] get-intersection\r\n- [ ] get-nearest\r\n- [ ] includes\r\n- [ ] intersects\r\n- [ ] polygon\r\n- [ ] polygon-sub\r\n- [x] rebalance",
+      "score": 1.0
+    }
