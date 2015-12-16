@@ -6,6 +6,7 @@
                  [reagent "0.5.1"]
                  [re-frame "0.6.0"]
 
+                 [prismatic/schema "1.0.4"]
                  [cljs-http "0.1.38"]]
 
   :source-paths ["src/clj"]
