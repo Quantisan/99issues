@@ -2,12 +2,14 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.189"]
                  [reagent "0.5.1"]
-                 [re-frame "0.6.0"]]
+                 [re-frame "0.6.0"]
+                 [garden "1.3.0"]]
 
   :source-paths ["src/clj"]
 
   :plugins [[lein-cljsbuild "1.1.1"]
-            [lein-figwheel "0.5.0-2"]]
+            [lein-figwheel "0.5.0-2"]
+            [lein-garden "0.2.6"]]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
@@ -29,5 +31,8 @@
                                 :output-to "resources/public/js/compiled/app.js"
                                 :optimizations :advanced
                                 :closure-defines {goog.DEBUG false}
-                                :pretty-print false}}}})
+                                :pretty-print false}}}}
+  :garden {:builds
+           {:dev
+            :source-paths ["src/styles" ]}})
 
