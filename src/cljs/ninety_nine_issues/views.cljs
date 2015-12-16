@@ -1,6 +1,8 @@
 (ns ninety-nine-issues.views
     (:require [re-frame.core :as re-frame]))
 
+(declare issue next-issue)
+
 (defn main-panel []
   (let [name (re-frame/subscribe [:name])]
     (fn []
@@ -21,6 +23,6 @@
       ;; hide if issues has no more issues? if current issue == total issues?
       ;; if current issue is last issue?
       [:div
-       {:class "next-issue"}
-       {:on-click #(re-frame/dispatch [:swipe "forward"])}
+       {:on-click #(re-frame/dispatch [:swipe "forward"])
+        :class "next-issue"}
        [:span ">>>>"]])))
