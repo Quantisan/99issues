@@ -6,14 +6,16 @@
 (defn main-panel []
   (let [name (re-frame/subscribe [:name])]
     (fn []
-      [:div "Hello from " @name
+      [:div
+       {:class "container"}
        [issue]
        [next-issue]])))
 
 (defn issue []
   (let [issue (re-frame/subscribe [:issue])]
     (fn []
-      [:div 
+      [:div
+       {:class "issue"}
        [:h1 (:title @issue)]
        [:h2 (:project @issue)]])))
 
@@ -25,4 +27,4 @@
       [:div
        {:on-click #(re-frame/dispatch [:swipe "forward"])
         :class "next-issue"}
-       [:span ">>>>"]])))
+       [:span ">"]])))
