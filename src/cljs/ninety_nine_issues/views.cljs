@@ -21,5 +21,6 @@
       ;; hide if issues has no more issues? if current issue == total issues?
       ;; if current issue is last issue?
       [:div
+       {:class "next-issue"}
        {:on-click #(re-frame/dispatch [:swipe "forward"])}
        [:span ">>>>"]])))

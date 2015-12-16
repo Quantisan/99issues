@@ -32,7 +32,10 @@
                                 :optimizations :advanced
                                 :closure-defines {goog.DEBUG false}
                                 :pretty-print false}}}}
-  :garden {:builds
-           {:dev
-            :source-paths}})
+  :garden {:builds [{
+                     :source-paths ["src/styles"]
+                     :stylesheet ninety-nine-issues.styles/screen
+                     :compiler {
+                                :output-to "resources/public/css/screen.css"
+                                :pretty-print? true}}]})
 
