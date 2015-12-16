@@ -34,5 +34,5 @@
                                 :pretty-print false}}}}
   :garden {:builds
            {:dev
-            :source-paths ["src/styles" ]}})
+            :source-paths}})
 
