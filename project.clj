@@ -4,7 +4,10 @@
                  ;; client side
                  [org.clojure/clojurescript "1.7.189"]
                  [reagent "0.5.1"]
-                 [re-frame "0.6.0"]]
+                 [re-frame "0.6.0"]
+
+                 [secretary "1.2.3"]        ;; routing
+                 ]
 
   :source-paths ["src/clj"]
 

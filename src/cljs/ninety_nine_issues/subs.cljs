@@ -1,8 +1,16 @@
 (ns ninety-nine-issues.subs
     (:require-macros [reagent.ratom :refer [reaction]])
-    (:require [re-frame.core :as re-frame]))
+    (:require [re-frame.core :as re-frame :refer [register-sub]]))
 
-(re-frame/register-sub
- :name
- (fn [db]
-   (reaction (:name @db))))
+(defn keyed-reaction [k]
+  (fn [db]
+    (reaction (k @db))))
+
+(register-sub
+ :active-page
+ (keyed-reaction :active-page))
+
+(register-sub
+  :language
+  (keyed-reaction :language))
+
