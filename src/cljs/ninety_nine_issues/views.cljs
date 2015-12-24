@@ -10,12 +10,11 @@
    [:div.row
     [:div.medium-8.large-7.columns
      [:h1 "99 Issues"]]]
-
    [:div.row
     [:div.medium-8.large-7.columns
-     [:p "Find beginner Github issues to work on"]]]
+     [:img {:src "img/jayz-tagline.jpg"}]]]
 
-   [:div.row
+   [:div.row {:style {:margin-top "2em"}}
     [:div.medium-8.large-7.columns.text-center
      [:form
       [:label
