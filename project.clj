@@ -6,6 +6,7 @@
                  [reagent "0.5.1"]
                  [re-frame "0.6.0"]
 
+                 [cljs-http "0.1.39"]       ;; http client
                  [secretary "1.2.3"]        ;; routing
                  ]
 

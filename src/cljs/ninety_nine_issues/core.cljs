@@ -17,6 +17,7 @@
   (defroute "/" [] (dispatch [:set-active-page :select-language]))
   (defroute "/:language" [language]
     (do (dispatch [:set-language language])
+        (dispatch [:fetch-issues language])
         (dispatch [:set-active-page :issue]))))
 
 (defn enable-history! []

@@ -30,9 +30,16 @@
           [:option {:value k} v])]]]]]])
 
 (defn issue-page []
-  (let [language (re-frame/subscribe [:language])]
+  (let [language (re-frame/subscribe [:language])
+        issue    (re-frame/subscribe [:issue])]
     [:div
-     [:p @language " issue"]]))
+    [:div.row
+     [:div.medium-8.large-7.columns.text-center
+      [:h1 @language " issue"]]]
+
+    [:div.row
+     [:div.medium-8.large-7.columns.text-center
+      [:h3 (:title @issue)]]]]))
 
 (defmulti pages identity)
 (defmethod pages :select-language [] [select-language-page])

@@ -14,3 +14,8 @@
   :language
   (keyed-reaction :language))
 
+(register-sub
+  :issue
+  (fn [db]
+    (reaction (first (:issues @db)))))
+
