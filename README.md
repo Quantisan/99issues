@@ -4,7 +4,7 @@
 
 99issues is a Github issues discovery web application for finding easy/newbie issues in your favourite languages for use during dojos or hack days.
 
-![I got 99 issues](/img/jayz-tagline.jpg)
+![I got 99 issues](/resources/public/img/jayz-tagline.jpg)
 
 ## Development Mode
 
