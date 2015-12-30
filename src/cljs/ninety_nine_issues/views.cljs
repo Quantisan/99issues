@@ -56,7 +56,10 @@
            [:div
             [:div.row
              [:div.columns
-              [:h3 (:title @issue)]]]]
+              [:h3 (:title @issue)]]]
+            [:div.row
+             [:div.columns
+              [:pre (:body @issue)]]]]
 
            ;; if there are no more issues in the queue for user
            (empty? @issue)

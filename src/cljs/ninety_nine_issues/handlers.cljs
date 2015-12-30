@@ -40,7 +40,8 @@
   (let [{:keys [html_url labels closed_at number milestone comments state title
                 labels_url updated_at comments_url locked id score events_url
                 url body user assignee created_at]} coll]
-    {:title title}))
+    {:title title 
+     :body body}))
 
 (register-handler
   :fetch-issues
