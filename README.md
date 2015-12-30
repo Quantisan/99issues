@@ -8,15 +8,25 @@
 
 ## Development Mode
 
-### Run application:
+Run a localhost server with
 
 ```
 lein figwheel
 ```
 
-Figwheel will automatically push cljs changes to the browser.
+Figwheel will automatically re-load the browser for any code changes.
 
 Wait a bit, then browse to [http://localhost:3449](http://localhost:3449).
+
+## Deploy
+
+Run
+
+```
+./deploy.sh
+```
+
+will compile and publish the site to [99issues.quantisan.com](http://99issues.quantisan.com/)
 
 ## Acknowledgement
 
