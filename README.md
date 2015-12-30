@@ -2,7 +2,11 @@
 
 >  I got 99 issues but a glitch ain't one
 
-99issues is a Github issues discovery web application for finding easy/newbie issues in your favourite languages for use during dojos or hack days.
+99issues is a Github issues discovery web application for finding easy/newbie
+issues in your favourite languages for use during dojos or hack days. 99issues
+itself is a pet project for training new ClojureScript developers. [Open an
+issue](https://github.com/Quantisan/99issues/issues) if you would like a
+guided tour of the source code to get involved.
 
 ![I got 99 issues](/resources/public/img/jayz-tagline.jpg)
 
