@@ -36,6 +36,16 @@
     (fn []
       [:div
        [:div.row
+        [:div.medium-8.large-8.columns.align-middle
+         [:a {:href "/"
+                 ;; TODO put this in CSS
+                 :style {:font-size "20px"
+                         :background "rgba(0, 0, 0, .1)"
+                         :padding "10px 20px"
+                         :cursor "pointer"}}
+          "Home page"]]]
+
+       [:div.row
         [:div.medium-8.large-8.columns.text-center
          [:h1 @language " issue"]]]
 
