@@ -1,5 +1,5 @@
 (ns ninety-nine-issues.views
-    (:require [re-frame.core :as re-frame]))
+    (:require [re-frame.core :as re-frame :refer [dispatch]]))
 
 (def languages [[:javascript "Javascript"]
                 [:python "Python"]
@@ -8,14 +8,14 @@
 (defn select-language-page []
   [:div
    [:div.row
-    [:div.medium-8.large-7.columns
+    [:div.medium-8.large-8.columns
      [:h1 "99 Issues"]]]
    [:div.row
-    [:div.medium-8.large-7.columns
+    [:div.medium-8.large-8.columns
      [:img {:src "img/jayz-tagline.jpg"}]]]
 
    [:div.row {:style {:margin-top "2em"}}
-    [:div.medium-8.large-7.columns.text-center
+    [:div.medium-8.large-8.columns.text-center
      [:form
       [:label
        [:select {:on-change (fn [e]
@@ -34,12 +34,23 @@
         issue    (re-frame/subscribe [:issue])]
     [:div
     [:div.row
-     [:div.medium-8.large-7.columns.text-center
+     [:div.medium-8.large-8.columns.text-center
       [:h1 @language " issue"]]]
 
     [:div.row
-     [:div.medium-8.large-7.columns.text-center
-      [:h3 (:title @issue)]]]]))
+     [:div.medium-8.large-8.columns
+      [:div.row
+       [:div.columns
+        [:h3 (:title @issue)]]] ]
+
+     [:div.medium-2.large-2.columns.align-middle
+      [:span {:on-click #(dispatch [:next-issue])
+              ;; TODO put this in CSS
+              :style {:font-size "80px"
+                      :background "rgba(0, 0, 0, .1)"
+                      :padding "20px 40px"
+                      :cursor "pointer"}}
+       ">"]]]]))
 
 (defmulti pages identity)
 (defmethod pages :select-language [] [select-language-page])

@@ -63,3 +63,8 @@
   (fn [db [issues]]
     (assoc db :issues (shuffle issues))))
 
+(register-handler
+  :next-issue
+  (fn [db _]
+    (assoc db :issues (rest (:issues db)))))
+
