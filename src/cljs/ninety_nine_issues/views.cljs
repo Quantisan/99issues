@@ -8,26 +8,27 @@
 (defn select-language-page []
   [:div
    [:div.row
-    [:div.medium-8.large-8.columns
+    [:div.medium-6.large-6.columns
      [:h1 "99 Issues"]]]
    [:div.row
-    [:div.medium-8.large-8.columns
+    [:div.medium-6.large-6.columns
      [:img {:src "img/jayz-tagline.jpg"}]]]
 
    [:div.row {:style {:margin-top "2em"}}
-    [:div.medium-8.large-8.columns.text-center
-     [:form
-      [:label
-       [:select {:on-change (fn [e]
-                              (re-frame/dispatch [:user-select-language
-                                                  (let [select-element (.-target e)
-                                                        index (.. select-element -selectedIndex)]
-                                                    (.. select-element -options (item index) -label))]))
-                 :defaultValue ""}
-        [:option {:value "" :disabled true } "Select your language"]
-        (for [[k v] languages]
-          ^{:key (str "select-" (name k))}
-          [:option {:value k} v])]]]]]])
+    [:div.medium-6.large-6.columns.text-center
+     [:div.callout.primary
+      [:form
+       [:label
+        [:select {:on-change (fn [e]
+                               (re-frame/dispatch [:user-select-language
+                                                   (let [select-element (.-target e)
+                                                         index (.. select-element -selectedIndex)]
+                                                     (.. select-element -options (item index) -label))]))
+                  :defaultValue ""}
+         [:option {:value "" :disabled true } "Select your language"]
+         (for [[k v] languages]
+           ^{:key (str "select-" (name k))}
+           [:option {:value k} v])]]]]]]])
 
 (defn issue-page []
   (let [language (re-frame/subscribe [:language])
@@ -59,7 +60,7 @@
               [:h3 (:title @issue)]]]
             [:div.row
              [:div.columns
-              [:pre {:style {:white-space "pre-wrap"}} 
+              [:pre {:style {:white-space "pre-wrap"}}
                     (:body @issue)]]]]
 
            ;; if there are no more issues in the queue for user
