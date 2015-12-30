@@ -36,6 +36,10 @@
     (fn []
       [:div
        [:div.row
+        [:div.medium-8.large-8.columns.align-middle
+         [:a.button.secondary {:href "/"} "Home page"]]]
+
+       [:div.row
         [:div.medium-8.large-8.columns.text-center
          [:h1 @language " issue"]]]
 
