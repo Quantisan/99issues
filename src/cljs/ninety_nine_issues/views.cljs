@@ -39,10 +39,19 @@
 
     [:div.row
      [:div.medium-8.large-8.columns
-      [:div.row
-       [:div.columns
-        [:h3 (:title @issue)]]] ]
+      (if @issue
+        [:div
+         [:div.row
+          [:div.columns
+           [:h3 (:title @issue)]]]]
 
+        ;; if there are no more issues in the queue for user
+        [:div.row
+         [:div.columns
+          [:div.callout.warning
+           [:p "We've ran out of issues for you. Refresh the page to restart."]]]])]
+
+     ;; Swipe action button for next issue
      [:div.medium-2.large-2.columns.align-middle
       [:span {:on-click #(dispatch [:next-issue])
               ;; TODO put this in CSS
