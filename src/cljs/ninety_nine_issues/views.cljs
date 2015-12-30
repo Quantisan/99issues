@@ -1,5 +1,6 @@
 (ns ninety-nine-issues.views
-    (:require [re-frame.core :as re-frame :refer [dispatch]]))
+    (:require [re-frame.core :as re-frame :refer [dispatch]]
+              [ninety-nine-issues.time :as time]))
 
 (def languages [[:javascript "Javascript"]
                 [:python "Python"]
@@ -57,7 +58,9 @@
            [:div
             [:div.row
              [:div.columns
-              [:h3 (:title @issue)]]]]
+              [:h3 (:title @issue)]
+              [:p "created: " (time/time-left-since-date (:created_at @issue))]
+]]]
 
            ;; if there are no more issues in the queue for user
            (empty? @issue)
