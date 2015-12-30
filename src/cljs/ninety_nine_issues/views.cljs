@@ -33,42 +33,43 @@
   (let [language (re-frame/subscribe [:language])
         issue    (re-frame/subscribe [:issue])
         loading? (re-frame/subscribe [:loading?])]
-    [:div
-     [:div.row
-      [:div.medium-8.large-8.columns.text-center
-       [:h1 @language " issue"]]]
+    (fn []
+      [:div
+       [:div.row
+        [:div.medium-8.large-8.columns.text-center
+         [:h1 @language " issue"]]]
 
-     [:div.row
-      [:div.medium-8.large-8.columns
-       (cond
-         @loading?
-         [:div.row
-          [:div.columns
-           [:div.callout
-            [:p "Loading issues from Github..."]]]]
+       [:div.row
+        [:div.medium-8.large-8.columns
+         (cond
+           @loading?
+           [:div.row
+            [:div.columns
+             [:div.callout
+              [:p "Loading issues from Github..."]]]]
 
-         @issue
-         [:div
-          [:div.row
-           [:div.columns
-            [:h3 (:title @issue)]]]]
+           @issue
+           [:div
+            [:div.row
+             [:div.columns
+              [:h3 (:title @issue)]]]]
 
-         ;; if there are no more issues in the queue for user
-         (empty? @issue)
-         [:div.row
-          [:div.columns
-           [:div.callout.warning
-            [:p "We've ran out of issues for you. Refresh the page to restart."]]]])]
+           ;; if there are no more issues in the queue for user
+           (empty? @issue)
+           [:div.row
+            [:div.columns
+             [:div.callout.warning
+              [:p "We've ran out of issues for you. Refresh the page to restart."]]]])]
 
-      ;; Swipe action button for next issue
-      [:div.medium-2.large-2.columns.align-middle
-       [:span {:on-click #(dispatch [:next-issue])
-               ;; TODO put this in CSS
-               :style {:font-size "80px"
-                       :background "rgba(0, 0, 0, .1)"
-                       :padding "20px 40px"
-                       :cursor "pointer"}}
-        ">"]]]]))
+        ;; Swipe action button for next issue
+        [:div.medium-2.large-2.columns.align-middle
+         [:span {:on-click #(dispatch [:next-issue])
+                 ;; TODO put this in CSS
+                 :style {:font-size "80px"
+                         :background "rgba(0, 0, 0, .1)"
+                         :padding "20px 40px"
+                         :cursor "pointer"}}
+          ">"]]]])))
 
 (defmulti pages identity)
 (defmethod pages :select-language [] [select-language-page])
