@@ -19,3 +19,7 @@
   (fn [db]
     (reaction (first (:issues @db)))))
 
+(register-sub
+  :loading?
+  (keyed-reaction :loading?))
+

@@ -61,7 +61,10 @@
   :load-issues
   [re-frame/trim-v]
   (fn [db [issues]]
-    (assoc db :issues (shuffle issues))))
+    (-> db
+        (assoc :issues (shuffle issues))
+        ;; set loading? flag to false
+        (assoc :loading? false))))
 
 (register-handler
   :next-issue
