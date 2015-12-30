@@ -1,6 +1,7 @@
 (ns ninety-nine-issues.handlers
   (:require [re-frame.core :as re-frame :refer [dispatch register-handler]]
             [ninety-nine-issues.db :as db]
+            [ninety-nine-issues.time :as time]
 
             [cljs-http.client :as http]
             [cljs.core.async :refer [<!]])
@@ -41,7 +42,8 @@
                 labels_url updated_at comments_url locked id score events_url
                 url body user assignee created_at]} coll]
     {:title title 
-     :body body}))
+     :body body
+     :created_at (time/parse created_at)}))
 
 (register-handler
   :fetch-issues

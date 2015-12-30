@@ -1,5 +1,6 @@
 (ns ninety-nine-issues.views
-    (:require [re-frame.core :as re-frame :refer [dispatch]]))
+    (:require [re-frame.core :as re-frame :refer [dispatch]]
+              [ninety-nine-issues.time :as time]))
 
 (def languages [[:javascript "Javascript"]
                 [:python "Python"]
@@ -57,11 +58,9 @@
            [:div
             [:div.row
              [:div.columns
-              [:h3 (:title @issue)]]]
-            [:div.row
-             [:div.columns
-              [:pre {:style {:white-space "pre-wrap"}}
-                    (:body @issue)]]]]
+              [:h3 (:title @issue)]
+              [:p "created: " (time/time-left-since-date (:created_at @issue))]
+]]]
 
            ;; if there are no more issues in the queue for user
            (empty? @issue)
@@ -78,7 +77,12 @@
                          :background "rgba(0, 0, 0, .1)"
                          :padding "20px 40px"
                          :cursor "pointer"}}
-          ">"]]]])))
+          ">"]]
+
+        [:div.row
+         [:div.medium-10.large-10.columns
+          [:pre {:style {:white-space "pre-wrap"}}
+                (:body @issue)]]]]])))
 
 (defmulti pages identity)
 (defmethod pages :select-language [] [select-language-page])
